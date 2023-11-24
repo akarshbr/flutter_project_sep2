@@ -1,0 +1,182 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    home: ListView1Assignment(),
+  ));
+}
+
+class ListView1Assignment extends StatefulWidget {
+  const ListView1Assignment({super.key});
+
+  @override
+  State<ListView1Assignment> createState() => _ListView1AssignmentState();
+}
+
+class _ListView1AssignmentState extends State<ListView1Assignment> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.deepOrange,
+        title: Text(
+          "Cities Around World",
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+      body: ListView(
+        children: [
+          Card(
+            child: Column(
+              children: [
+                ListTile(
+                  tileColor: Colors.orange,
+                  leading: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minWidth: 60,
+
+                      maxWidth: 64,
+                      maxHeight: 64,
+                    ),
+                    child: Image.asset("assets/cities/mumbai.jpg", fit: BoxFit.cover),
+                  ),
+                  title: Text(
+                    "Mumbai",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "India",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Population:21m",
+                        style: TextStyle(color: Colors.black, fontSize: 10),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 10,),
+                ListTile(
+                  tileColor: Colors.orange,
+                  leading: Image.asset("assets/cities/washington.jpg",fit: BoxFit.cover,),
+                  title: Text(
+                    "Washington, D.C.",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "USA",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Population:6.9l",
+                        style: TextStyle(color: Colors.black, fontSize: 10),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+Container(
+            padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+            child: Card(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              margin: EdgeInsets.fromLTRB(10, 60, 10, 60),
+              color: Colors.lightBlueAccent,
+              elevation: 10,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Icon(Icons.home,size: 50,color: Colors.black54,),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Heart",style: TextStyle(fontSize: 20),),
+                      Text("Shaker",style: TextStyle(fontSize: 20),),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+
+
+
+
+
+          GridView(
+                  gridDelegate:
+                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                  children: List.generate(
+                    12,
+                        (index) {
+                      return Card(
+                        semanticContainer: true,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        color: Colors.primaries[Random().nextInt(
+                            Colors.primaries.length)],
+                        elevation: 10,
+                        margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                        child: SizedBox(
+                          height: 50,
+                          width: 100,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Icon(icons[index], size: 50, color: Colors.black54,),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Heart", style: TextStyle(fontSize: 20),),
+                                  Text("Shaker", style: TextStyle(fontSize: 20),),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      );
+                      ,
+
+                    },
+                  ),
+                ),
+
+
+
+
+
+
+
+
+
+
+
