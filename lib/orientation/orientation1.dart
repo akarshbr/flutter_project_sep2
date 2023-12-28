@@ -24,13 +24,13 @@ class Orientation1 extends StatelessWidget {
       body: orientation == Orientation.portrait
           ? Container(
               color: Colors.blueGrey,
-              height: height / 2,
-              width: width / 2,
+              height: height,
+              width: width,
               child: Center(child: Text("Portrait")),
             )
           : Container(
               color: Colors.green,
-              height: height / 2,
+              height: height,
               width: width,
               child: Center(child: Text("Landscape")),
             ),
