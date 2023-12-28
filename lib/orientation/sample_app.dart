@@ -57,7 +57,7 @@ class _MediaQueryExampleState extends State<MediaQueryExample> {
           _text('Inverting Colors: ${media.invertColors}'),
           _text('In High Contrast: ${MediaQuery.highContrastOf(context)}'),
           _text('Disable Animation: ${media.disableAnimations}'),
-          _text('In Bold Text: ${MediaQuery.boldTextOverride(context)}'),
+          _text('In Bold Text: ${MediaQuery.boldTextOf(context)}'),
           _text('Navigation Mode: ${media.navigationMode}'),
           _text('Orientation: ${media.orientation}'),
         ],
