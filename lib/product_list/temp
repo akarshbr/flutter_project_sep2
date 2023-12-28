@@ -1,0 +1,21 @@
+children: products
+            .map(
+              (e) => Card(
+                child: InkWell(
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        e["image"],
+                        height: 100,
+                        width: 100,
+                      ),
+                      Text(e["Name"]),
+                    ],
+                  ),
+                  onTap: () {
+                    Navigator.pushNamed(context, "Details", arguments: e["id"]);
+                  },
+                ),
+              ),
+            )
+            .toList(),
